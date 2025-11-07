@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy site to gh-pages (no upload-artifact)
 
 on:
   push:
@@ -6,28 +6,35 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 jobs:
-  build-and-upload:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout main
         uses: actions/checkout@v4
-
-      - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v2
         with:
-          path: .
+          persist-credentials: true
 
-  deploy:
-    needs: build-and-upload
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      contents: read
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      # Optional: build step for static-site generators (uncomment / adapt)
+      # - name: Build site
+      #   run: |
+      #     # e.g. npm ci && npm run build
+      #     echo "No build step configured"
+
+      - name: Setup commit info
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          # optionally set publish_branch: gh-pages (default)
+          # commit_message: "Publish from GitHub Actions"
