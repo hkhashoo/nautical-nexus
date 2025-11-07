@@ -1,5 +1,5 @@
-
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ main ]
@@ -11,19 +11,19 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build-and-upload:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v2
         with:
           path: .
 
   deploy:
-    needs: [build-and-deploy]
+    needs: build-and-upload
     runs-on: ubuntu-latest
     permissions:
       pages: write
