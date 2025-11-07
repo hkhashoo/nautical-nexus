@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nautical Nexis — IMU Preparation</title>
+  <meta name="description" content="Nautical Nexis — targeted online IMU training." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="dark">
+  <header class="site-header dark-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.jpeg" alt="Nautical Nexis logo" width="64" height="64">
+        <div class="brand-text"><h1>Nautical Nexis</h1><div class="tag">IMU • DNS • Maritime Careers</div></div>
+      </div>
+      <nav class="nav">
+        <a href="#programs">Programs</a>
+        <a href="#how">How</a>
+        <a href="#instagram-gallery">Instagram</a>
+        <a class="cta" href="#contact">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-centered">
+      <img class="hero-bg" src="assets/n2.webp" alt="nautical banner">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner container">
+        <h2 class="hero-title">NAUTICAL NEXUS</h2>
+        <p class="hero-sub">Practical IMU-CET & IMU-DNS preparation — rigorous, no-nonsense, mentor-led.</p>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="#contact">Request Free Trial</a>
+          <a class="btn btn-accent" href="https://www.instagram.com/nautical_nexis/" target="_blank">Follow @nautical_nexis</a>
+        </div>
+        <div class="hero-note">Rushil Khashoo • +91 90840 75474 • rushilkhashoo@gmail.com</div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="container">
+        <h3>Programs</h3>
+        <div class="cards">
+          <article class="card">
+            <h4>English — Fast Track</h4>
+            <p>Targeted grammar, comprehension and vocabulary practice for IMU-CET.</p>
+          </article>
+          <article class="card">
+            <h4>Physics — Core & Modern</h4>
+            <p>Problem-first teaching: electromagnetism, optics, modern physics and practice.</p>
+          </article>
+          <article class="card">
+            <h4>Chemistry — Applied & Organic</h4>
+            <p>Applied chemistry, kinetics and problem solving tailored to IMU formats.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="container">
+        <h3>How we teach</h3>
+        <ol class="steps">
+          <li><strong>Map & baseline</strong> — entry assessment and syllabus mapping.</li>
+          <li><strong>Teach & drill</strong> — live sessions and intensive practice.</li>
+          <li><strong>Mock & refine</strong> — timed mocks with analytics.</li>
+          <li><strong>Mentor & join</strong> — interview prep and documentation.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="instagram" id="instagram-gallery">
+      <div class="container">
+        <h3>Instagram</h3>
+        <div class="ig-grid">
+          <div class="ig-item"><img src="instagram/n1.webp" alt="ig1"></div>
+          <div class="ig-item"><img src="instagram/n2.webp" alt="ig2"></div>
+          <div class="ig-item"><img src="instagram/n3.webp" alt="ig3"></div>
+          <div class="ig-item"><img src="instagram/n4.webp" alt="ig4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <h3>Register / Contact</h3>
+          <form id="signup">
+            <div class="row">
+              <input type="text" id="name" name="name" placeholder="Full name" required>
+              <input type="tel" id="phone" name="phone" placeholder="Phone" value="+91 9084075474" required>
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email" value="rushilkhashoo@gmail.com" required>
+            <select id="course" name="course">
+              <option>English — Fast Track</option>
+              <option>Physics — IMU Prep</option>
+              <option>Chemistry — IMU Prep</option>
+              <option>IMU-DNS Comprehensive</option>
+            </select>
+            <div class="row actions">
+              <button class="btn btn-ghost" type="submit">Request Free Trial</button>
+              <button class="btn btn-accent" type="button" id="callBtn">Call Rushil</button>
+            </div>
+            <p class="small-muted">Or message on Instagram: <a href="https://www.instagram.com/nautical_nexis/">@nautical_nexis</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nautical Nexis — Join us for a smooth career at seas ⚓</p>
+    </div>
+  </footer>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
