@@ -1,0 +1,32 @@
+name: Deploy site to gh-pages (peaceiris v4)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Git for commit (optional)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy to gh-pages (peaceiris v4)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: .
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
