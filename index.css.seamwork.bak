@@ -1,0 +1,84 @@
+
+/* Improved Material-like color scheme (deep nautical + coral accent) */
+/* Primary deep navy, secondary coral, supportive sea green */
+:root{
+  --md-primary: #0b3d91; /* deep navy */
+  --md-primary-variant: #072a6b;
+  --md-secondary: #ff6b6b; /* coral */
+  --md-accent: #00a896; /* sea green */
+  --md-surface: #ffffff;
+  --md-on-surface: #052433;
+  --md-bg: #f3f8fb;
+  --md-elevation-1: 0 6px 18px rgba(4,12,34,0.08);
+  --md-elevation-2: 0 10px 30px rgba(4,12,34,0.10);
+  --md-radius: 12px;
+  --md-radius-sm: 8px;
+}
+
+/* Ensure Roboto is used where available, but note local-server requirement in README */
+body, button, input, select, textarea {
+  font-family: 'Roboto', Inter, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+
+/* keep rest of the CSS below (existing content will follow) */
+
+
+/* Material-like theme (Roboto) */
+:root{
+  --md-surface:#ffffff;
+  --md-on-surface:#0b2532;
+  --md-primary: #1976d2; /* blue 600 */
+  --md-primary-variant: #115293;
+  --md-secondary: #00acc1;
+  --md-bg: #f5f7fb;
+  --md-elevation-1: 0 1px 3px rgba(11,37,50,0.12), 0 1px 2px rgba(11,37,50,0.08);
+  --md-elevation-2: 0 4px 6px rgba(11,37,50,0.12), 0 1px 3px rgba(11,37,50,0.08);
+  --md-radius: 12px;
+  --md-radius-sm: 8px;
+}
+
+/* Baseline */
+.m-base{font-family:Roboto, Inter, system-ui, -apple-system, 'Segoe UI', Arial; background:var(--md-bg); color:var(--md-on-surface); margin:0; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+
+/* Header */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,var(--md-primary),var(--md-primary-variant));color:white;box-shadow:var(--md-elevation-2);position:sticky;top:0;z-index:30}
+.brand{display:flex;gap:14px;align-items:center}
+.brand img{border-radius:8px;background:rgba(255,255,255,0.06);padding:4px}
+.brand h1{margin:0;font-size:18px;font-weight:700;letter-spacing:0.2px}
+.tag{font-size:13px;opacity:0.95}
+
+/* Navigation */
+.nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:14px;font-weight:600;padding:8px;border-radius:8px;transition:background 160ms}
+.nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* Hero */
+.hero{padding:48px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
+.hero h2{font-size:30px;margin:0 0 8px;font-weight:800;line-height:1.04}
+.lead{margin:0 0 12px;color:rgba(11,37,50,0.72);font-size:15px}
+.authority{font-size:13px;color:rgba(11,37,50,0.64);background:rgba(255,255,255,0.85);padding:10px;border-radius:8px;border-left:4px solid var(--md-primary);box-shadow:var(--md-elevation-1)}
+
+/* Card system */
+.card{background:var(--md-surface);padding:18px;border-radius:var(--md-radius-sm);box-shadow:var(--md-elevation-1);border:1px solid rgba(11,37,50,0.03)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* Buttons (Material) */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:8px;cursor:pointer;border:none;box-shadow:var(--md-elevation-1);font-weight:600;text-decoration:none}
+.btn-primary{background:var(--md-primary);color:white}
+.btn-secondary{background:var(--md-secondary);color:white}
+.btn-ghost{background:transparent;border:1px solid rgba(11,37,50,0.06);color:var(--md-primary)}
+
+/* Forms */
+input,select,button{font:inherit;padding:10px;border-radius:8px;border:1px solid rgba(11,37,50,0.06);outline:none}
+input:focus,select:focus,button:focus{box-shadow:0 6px 12px rgba(25,118,210,0.12);border-color:var(--md-primary)}
+
+/* IG grid */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ig-item img{width:100%;height:220px;object-fit:cover;border-radius:8px;display:block}
+
+/* Utility & responsive */
+.lead-muted{color:rgba(11,37,50,0.6)}
+.small-muted{font-size:13px;color:rgba(11,37,50,0.6);margin-top:8px}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.ig-grid{grid-template-columns:1fr} .brand h1{font-size:16px} .hero h2{font-size:22px} .container{padding:18px}}
